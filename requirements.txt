@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.3
+html2text==2024.2.26
+langchain==0.2.11
+langchain_community==0.2.10
+langchain_core==0.2.26
+langchain_openai==0.1.20
+pyfiglet==1.0.2
+python-dotenv==1.0.1
+rich==13.7.1
