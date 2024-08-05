@@ -15,10 +15,21 @@
 
 ## Usage
 
-Run the application:
+Run the application with interactive console:
 
 ```sh
 python main.py
+```
+
+Commands:
+```sh
+kubewizard>: help
+Available commands:
+  - clear  :  Clear the chat history.
+  - history:  Display the chat history.
+  - help   :  Print help info.
+  - exit   :  Exit the application.
+  - *      :  Ask me everything about your kubernetes cluster(why my nginx pod not ready)
 ```
 
 ## Installation
@@ -40,3 +51,7 @@ python main.py
    ```sh
    cp .env.example .env
    ```
+
+## License
+
+This project is licensed under the terms of the Apache-2.0 license. See the [`LICENSE`](./LICENSE) file for details.
