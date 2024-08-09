@@ -20,6 +20,7 @@ class RequestsGet(RequestsGetTool):
     parser.ignore_mailto_links = True
 
     def _run(self, url: str, **kwargs: Any) -> str:
+        url = url.strip().strip('"`')
         response = super()._run(url, **kwargs)
         soup = BeautifulSoup(response, 'html.parser')
         for tag in soup(['header', 'footer', 'script', 'styple']):
