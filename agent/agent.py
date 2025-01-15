@@ -1,6 +1,6 @@
 import os
 from typing import Optional
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
@@ -25,19 +25,20 @@ class KubeAgent:
 
     def __init__(self, llm: BaseChatModel= ChatOpenAI(model="gpt-4o-mini", temperature=0.7), debug_level: Optional[int] = None):
         self.memory = ConversationBufferMemory(memory_key="chat_history")
+
         agent = create_react_agent(llm, self.tools, self.prompt)
 
         verbose = False
         return_intermediate_steps = False
         if debug_level is None:
             debug_level = int(os.getenv("DEBUG_LEVEL", "1"))
-        
+
         if debug_level == 1:
             verbose = True
         elif debug_level >= 2:
             verbose = True
             return_intermediate_steps = True
-        
+
         self.agent = AgentExecutor(
             name=self.name,
             agent=agent,

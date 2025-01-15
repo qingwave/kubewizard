@@ -1,5 +1,6 @@
 from langchain_community.tools.ddg_search.tool import DuckDuckGoSearchRun, DuckDuckGoSearchResults
 from langchain_community.utilities.duckduckgo_search import DuckDuckGoSearchAPIWrapper
+import duckduckgo_search
 
 def create_search_tool():
     return DuckDuckGoSearchResults(
